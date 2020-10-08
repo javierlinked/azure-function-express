@@ -1,6 +1,6 @@
 {
   "name": "@javierlinked/azure-function-express",
-  "version": "2.4.0",
+  "version": "2.5.6",
   "sideEffects": false,
   "description": "Allows Express usage with Azure Function",
   "keywords": [
@@ -37,7 +37,6 @@
     "clean:build": "rm -rf lib",
     "clean:npm": "rm -rf node_modules",
     "coverage": "jest --coverage",
-    "publish": "npm run validate && npm run build && npm publish",
     "style": "eslint src/**",
     "test": "jest",
     "validate": "npm run style && npm run coverage"
