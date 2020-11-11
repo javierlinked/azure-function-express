@@ -1,6 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { Readable } from "stream";
 
+const contentType = require("content-type");
+
 const NOOP = () => {};
 
 function removePortFromAddress(address) {
@@ -64,6 +66,17 @@ export default class IncomingMessage extends Readable {
     super();
 
     Object.assign(this, context.bindings.req); // Inherit
+
+    try {
+      const content = contentType.parse(context.bindings.req);
+      if (content.type === "multipart/form-data") {
+        this.push(context.bindings.req.body); // Push the request body onto this stream
+      } else {
+        this.push(context.bindings.req.rawBody); // Push the request rawBody onto this stream
+      }
+    } catch (error) {
+      this.push(context.bindings.req.rawBody); // GET
+    }
 
     this.push(context.bindings.req.rawBody); // Push the request body onto this stream
     this.push(null); // Close the stream

@@ -1,6 +1,6 @@
 {
   "name": "@javierlinked/azure-function-express",
-  "version": "2.5.9",
+  "version": "2.5.10",
   "sideEffects": false,
   "description": "Allows Express usage with Azure Function",
   "keywords": [
@@ -62,5 +62,8 @@
     "eslint-plugin-import": "^2.22.1",
     "express": "^4.17.1",
     "jest": "^26.4.2"
+  },
+  "dependencies": {
+    "content-type": "^1.0.4"
   }
 }
