@@ -107,8 +107,11 @@ Supported Node version are:
  - Node 6.11.2 ([first node version supported by Azure Functions](https://github.com/Azure/azure-webjobs-sdk-script/issues/2036#issuecomment-336942961))
  - Node 8 (LTS)
  - Node 10
+ - Node 12
+ - Node 14
+ - Node 16
 
-Azure Functions runtime v1 and v2 beta are both supported.
+Azure Functions runtime v1, v2 and v3 are supported.
 
 
 ## License
